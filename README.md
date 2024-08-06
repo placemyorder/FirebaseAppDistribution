@@ -1,5 +1,5 @@
 # FirebaseAppDistribution
-Used to distribute an apk, aab or ipa via Firebase App Distribution
+Used to distribute an apk, aab or ipa via Firebase App Distribution. This was initially uploadtofirebase.ps1. And later converted to an action.
 
 A lot of the documentation here is referenced from https://github.com/wzieba/Firebase-Distribution-Github-Action
 
