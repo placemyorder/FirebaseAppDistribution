@@ -9,23 +9,18 @@ A lot of the documentation here is referenced from https://github.com/wzieba/Fir
 
 **Required** App id can be found in the Firebase console in your Projects Settings, under Your apps. It is in the following format 1:1234567890123942955466829:android:1234567890abc123abc123
 
-### `token`
+### `firebaseToken`
 
 ⚠️ Deprecated! Don't use it. Firebase team deprecated this option and it will soon be removed.
 
-Use `serviceCredentialsFileContent` instead. [Learn here how to generate one](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration).
+Use `credentialFileContent` instead. [Learn here how to generate one](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration).
 
 ~**Required** Upload token - see Firebase CLI Reference (tldr; run `firebase login:ci` command to get your token).~
 
-### `serviceCredentialsFileContent`
+### `credentialFileContent`
 **Required** Content of Service Credentials private key JSON file. [Learn here how to generate one](https://github.com/wzieba/Firebase-Distribution-Github-Action/wiki/FIREBASE_TOKEN-migration).
 
-### `serviceCredentialsFile`
-
-**Required** Service Credentials File - The path or HTTP URL to your Service Account private key JSON file.
-Required only if you don't use `serviceCredentialsFileContent`.
-
-### `file`
+### `appPath`
 
 **Required** Artifact to upload (.apk, .aab or .ipa)
 
@@ -47,10 +42,6 @@ Release notes visible on release page. If not specified, plugin will add last co
 ### `releaseNotesFile`
 
 Specify the release note path to a plain text file.
-
-### `debug`
-
-Flag that can be included to print verbose log output. Default value is `false`
 
 ## Outputs
 
@@ -84,7 +75,7 @@ jobs:
       uses: placemyorder/FirebaseAppDistribution@v1
       with:
         appId: ${{secrets.FIREBASE_APP_ID}}
-        serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+        credentialFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
         groups: testers
-        file: app/build/outputs/apk/release/app-release-unsigned.apk
+        appPath: app/build/outputs/apk/release/app-release-unsigned.apk
 ```
