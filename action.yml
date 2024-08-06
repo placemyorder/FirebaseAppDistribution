@@ -1,0 +1,28 @@
+name: 'Firebase App Distribution'
+author: 'Madhav Shenoy <@mshenoy83>'
+description: 'Deploy .apk.aab,.ipa to Firebase'
+inputs:
+  appPath:
+    description: 'Artifact to upload (.apk or .ipa)'
+    required: true
+  appId:
+    description: 'App id can be found on the General Settings page'
+    required: true
+  credentialFileContent:
+    description: 'Service credentials file'
+  firebaseToken:
+    description: 'Upload token - see Firebase CLI Reference'
+  groups:
+    description: 'Distribution groups'
+  releaseNotes:
+    description: 'Release notes visible on release page'
+  releaseNotesFile:
+    description: 'Release notes visible on release page'
+  testers:
+    description: 'Distribution testers'
+branding:
+  color: 'orange'
+  icon: 'send'                   
+runs:
+  using: 'node20'
+  main: 'index.js'

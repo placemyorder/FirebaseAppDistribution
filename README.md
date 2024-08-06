@@ -1,7 +1,7 @@
 # FirebaseAppDistribution
 Used to distribute an apk, aab or ipa via Firebase App Distribution
 
-This action uploads artifacts (.apk,.aab or .ipa) to Firebase App Distribution.
+A lot of the documentation here is referenced from https://github.com/wzieba/Firebase-Distribution-Github-Action
 
 ## Inputs
 
